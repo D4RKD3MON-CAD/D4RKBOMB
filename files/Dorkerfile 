@@ -1,0 +1,36 @@
+# Dockerfile
+
+# Script       : D4RKBOMB
+# Author       : D4RKD3MON
+# Github       : https://github.com/D4RKD3MON-CAD
+# Page    : https://m.facebook.com/D3MON37
+# Email        : anonymous1032701@gmail.com
+# Date         : 2-04-2023
+# Main Language: Python
+
+# Download and import main images
+
+# Operating system
+FROM debian:latest
+
+# Author info
+LABEL MAINTAINER="https://github.com/D4RKD3MON-CAD/"
+
+# Working directory
+WORKDIR /D4RKBOMB/
+# Add files 
+ADD . /D4RKBOMB
+
+# Installing other packages
+RUN apt update
+RUN apt upgrade -y
+RUN apt install python
+
+# Main command
+CMD ["./D4RKBOMB.py", "--no-update"]
+
+## Wanna run it own? Try following commnads:
+
+## "sudo docker build . -t D4RKD3MON-CAD/D4RKBOMB:latest", "sudo docker run --rm -it D4RKD3MON-CAD/D4RKBOMB:latest"
+
+## "sudo docker pull D4RKD3MON-CAD/D4RKBOMB", "sudo docker run --rm -it weirdnehal/D4RKBOMB"
